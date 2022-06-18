@@ -1,0 +1,50 @@
+$color-primario: #17404b;
+$color-btn: rgb(97, 234, 97);
+$color-btnb: #7be8db;
+* {
+  box-sizing: border-box;
+}
+
+.error {
+  color: white;
+  background-color: red;
+  font-family: verdana;
+  display: block;
+  margin: 5px 0 10px 0;
+}
+body {
+  font-family: "KG Summer Sunshine", sans-serif;
+  font-family: "KG Summer Sunshine Blackout", sans-serif;
+  font-family: "KG Summer Sunshine Shadow", sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0px;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: $color-primario;
+}
+p {
+  text-align: center;
+}
+.btn {
+  color: white;
+  background: $color-btn;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 12px;
+}
+.btn-blue {
+  color: white;
+  background: $color-btnb;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px 12px;
+}
