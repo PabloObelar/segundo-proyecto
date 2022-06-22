@@ -13,8 +13,8 @@ const App = () => {
   const valorBlue = useRef();
   //Se crean los estados
 
-  const [resultado, setVar] = useState();
-  const [resultadoBlue, setVarBlue] = useState();
+  const [resultado, setResultado] = useState();
+  const [resultadoBlue, setResultadoBlue] = useState();
 
   const validar = () => {
     if (valor.current.value >= 0) {
@@ -22,15 +22,14 @@ const App = () => {
       let compra = cotizaciones[0].casa.compra.replace(",", ".");
       if (select.current.value === "1") {
         let operacion = (valor.current.value * venta).toFixed(2);
-        setVar(operacion);
+        setResultado(`U$D ${operacion}`);
       } else if (select.current.value === "2") {
         let operacion2 = (valor.current.value / compra).toFixed(2);
-        setVar(operacion2);
+        setResultado(`AR$ ${operacion2}`);
       } else {
-        setVar("Error. Elija una opción.");
+        const error = "ERROR EN DATOS";
+        setResultado(error);
       }
-    } else {
-      setVar("Ingrese un valor mayor que cero.");
     }
     document.getElementById("form").reset();
   };
@@ -41,15 +40,14 @@ const App = () => {
       let compraBlue = cotizaciones[1].casa.compra.replace(",", ".");
       if (selectBlue.current.value === "3") {
         let operacion3 = (valorBlue.current.value * ventaBlue).toFixed(2);
-        setVarBlue(operacion3);
+        setResultadoBlue(`U$D Blue ${operacion3}`);
       } else if (selectBlue.current.value === "4") {
         let operacion4 = (valorBlue.current.value / compraBlue).toFixed(2);
-        setVarBlue(operacion4);
+        setResultadoBlue(`AR$ ${operacion4}`);
       } else {
-        setVarBlue("Error. Elija una opción.");
+        const error = "ERROR EN DATOS";
+        setResultadoBlue(error);
       }
-    } else {
-      setVarBlue("Ingrese un valor mayor que cero.");
     }
     document.getElementById("form2").reset();
   };
