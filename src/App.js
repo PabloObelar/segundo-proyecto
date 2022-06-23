@@ -15,6 +15,8 @@ const App = () => {
 
   const [resultado, setResultado] = useState();
   const [resultadoBlue, setResultadoBlue] = useState();
+  const [valore, setValore] = useState();
+  const [valore2, setValore2] = useState();
 
   const validar = () => {
     if (valor.current.value >= 0) {
@@ -28,6 +30,7 @@ const App = () => {
         setResultado(`AR$ ${operacion2}`);
       } else {
         const error = "ERROR EN DATOS";
+        setValore(false);
         setResultado(error);
       }
     }
@@ -46,6 +49,7 @@ const App = () => {
         setResultadoBlue(`AR$ ${operacion4}`);
       } else {
         const error = "ERROR EN DATOS";
+        setValore2(false);
         setResultadoBlue(error);
       }
     }
@@ -76,9 +80,10 @@ const App = () => {
         </form>
         <div id="respuesta">
           <p>
-            <strong className={resultado === false ? "error" : null}>
-              {resultado ? <span>Cambio a dolar oficial: </span> : null}{" "}
+            <strong>
+              {resultado ? <span>Cambio a dolar oficial: </span> : null}
               {resultado}
+              {valore}
             </strong>
           </p>
         </div>
@@ -105,9 +110,10 @@ const App = () => {
         </form>
         <div id="respuesta2">
           <p>
-            <strong className={resultadoBlue === false ? "error" : null}>
-              {resultadoBlue ? <span>Cambio a blue: </span> : null}{" "}
+            <strong>
+              {resultadoBlue ? <span>Cambio a blue: </span> : null}
               {resultadoBlue}
+              {valore2}
             </strong>
           </p>
         </div>
